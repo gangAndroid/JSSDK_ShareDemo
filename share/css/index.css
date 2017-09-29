@@ -1,0 +1,142 @@
+html{font-size:10px;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin:0; padding:0; border:0; font-weight: normal; vertical-align:baseline;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+body {font-family:"Microsoft YaHei", Arial, Helvetica, sans-serif; background:#f5f5f5;}
+ol, ul { list-style:none;}
+em, i{font-style: normal;}
+blockquote, q { quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after { content:''; content:none;}
+table { border-collapse:collapse; border-spacing:0;}
+* {
+    tap-highlight-color:rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+input, textarea { outline:0; resize:none; -webkit-appearance: none;}
+img{vertical-align: middle;}
+a{display: block; color: #333; text-decoration: none;}
+
+/*以下是样式代码*/
+#share{margin: 50px;text-align: center;}
+
+.screenW{width: 100%; height: 100%; position: fixed; left: 0; top: 0; background-color: rgba(0,0,0,0.5); z-index: 999; display: none;}
+.subW{width: 100%; position: absolute; left: 0; background-color: #FFF; z-index: 999;}
+.subW.move{
+    animation:sidebar-move .5s ease;
+    -webkit-animation:sidebar-move .5s ease;
+    bottom:0px;
+}
+.subW.back{
+    animation:sidebar-back .5s ease;
+    -webkit-animation:sidebar-back .5s ease;
+    bottom:-260px;
+}
+.subW .title{width: 100%; height: 40px; line-height: 40px; text-align: center; font-size: .4rem;}
+.subW .close{width: 100%; height: 40px; line-height: 40px; text-align: center; font-size: .4rem;border: 1px solid gray;}
+.subW .info{width:100%; padding: 0 10px;margin: 10px;}
+/*以下是对百度自带样式的改造*/
+.shareBox .bdshare-button-style0-16{
+    background-image: -webkit-linear-gradient(bottom,rgba(0,0,0,.1) 50%,transparent 50%);
+    background-image: linear-gradient(bottom,rgba(0,0,0,.1) 50%,transparent 50%);
+    background-size:  100% 1px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.shareBox .bdshare-button-style0-16:last-child{background: none;}
+.shareBox .bdshare-button-style0-16:after{
+    content: "";
+    visibility: hidden;
+    display: none;
+    height: 0;
+    clear: both;
+}
+.shareBox .bdshare-button-style0-16 a{
+    text-align: center;
+    float: none;
+    font-size: 12px;
+    padding: 35px 0 0 0;
+    line-height: normal;
+    height: auto;
+    cursor: pointer;
+    margin: 10px 0;
+    position: relative;
+    background: none;
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    flex:1;
+}
+.shareBox .bdshare-button-style0-16 a:after{
+    content: " ";
+    width:30px;
+    height:30px;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+}
+.shareBox .bdshare-button-style0-16 a.bds_qzone:after{
+    background: url("http://testqy.999000.cn/share/img/icon_qqkongjian_yellow.png") no-repeat; background-size: 100%;
+}
+.shareBox .bdshare-button-style0-16 a.bds_tsina:after{
+    background: url("http://testqy.999000.cn/share/img/icon_xinlangweibo_red.png") no-repeat; background-size: 100%;
+}
+.shareBox .bdshare-button-style0-16 a.bds_sqq:after{
+    background: url("http://testqy.999000.cn/share/img/icon_qqhaoyou_blue.png") no-repeat; background-size: 100%;
+}
+.shareBox .bdshare-button-style0-16 a.bds_tqq:after{
+    background: url("http://testqy.999000.cn/share/img/icon_qqweibo_green.png") no-repeat; background-size: 100%;
+}
+.shareBox .bdshare-button-style0-16 a.bds_weixin:after{
+    background: url("http://testqy.999000.cn/share/img/icon_weixin_green.png") no-repeat; background-size: 100%;
+}
+
+.shareBox .bdshare-button-style0-16 a.popup_more{width: 100%; margin: 20px 0;}
+.shareBox .bdshare-button-style0-16 a.popup_more:after{
+    width:40px;
+    height:40px;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    background: url("http://testqy.999000.cn/share/img/icon_more_orange.png") no-repeat; background-size: 100%;
+
+}
+/*动画*/
+@keyframes sidebar-move {
+    0% {
+        bottom:-260px;
+    }
+    100% {
+        bottom:0px;
+    }
+}
+@keyframes sidebar-back {
+    0% {
+        bottom:0px;
+    }
+    100% {
+        bottom:-260px;
+    }
+}
+@-webkit-keyframes sidebar-move {
+    0% {
+        bottom:-260px;
+    }
+    100% {
+        bottom:0px;
+    }
+}
+@-webkit-keyframes sidebar-back {
+    0% {
+        bottom:0px;
+    }
+    100% {
+        bottom:-260px;
+    }
+}
