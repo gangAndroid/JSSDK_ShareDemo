@@ -1,7 +1,7 @@
 <?php
 require_once "jssdk.php";
-$appid = 'wxab943c1c3318c99d';
-$APPSECRET = '5fff0238e55403596d0f46a2e749d814';
+$appid = 'wxab943c1c3318c99da';// 微信公众号APPID,必须通过认证
+$APPSECRET = '5fff0238e55403596d0f46a2e749d8141';// 微信公众号APPSECRET,必须通过认证
 $jssdk = new JSSDK($appid, $APPSECRET);
 $signPackage = $jssdk->GetSignPackage();
 ?>
